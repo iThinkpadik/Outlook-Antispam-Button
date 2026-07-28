@@ -162,16 +162,9 @@ Public Const SPAM_REPORT_EMAIL As String = "Введите сюда адрес �
 ```
 OutlookSpamButton/
 ├── OutlookSpamButton.bas          # Основной VBA-модуль
-├── README.md                      # Этот файл
-├── LICENSE                        # Лицензия MIT
+├── README.md                      # ПрочтиМеня)
 └── images/                        # Скриншоты (опционально)
 ```
-
----
-
-## 📄 Лицензия
-
-Проект распространяется под лицензией MIT. Подробности в файле `LICENSE`.
 
 ---
 
