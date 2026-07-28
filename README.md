@@ -1,49 +1,195 @@
-# OutlookSpamButton
-Module in VBA to add as a "Report Spam" button in outlook and send it to verdacht@safeonweb.be
+# 📧 OutlookSpamButton
 
-## How it works
-This module will send the current selected email in outlook as an attachment to verdacht@safeonweb.be and will delete the email from your inbox. This can be added as a button in your outlook ribbon for easy use.
+<div align="center">
+  <img src="https://img.shields.io/badge/Outlook-VBA-blue?style=for-the-badge&logo=microsoft-outlook" alt="Outlook VBA">
+  <img src="https://img.shields.io/badge/версия-2.0-green?style=for-the-badge" alt="Version 2.0">
+  <img src="https://img.shields.io/badge/лицензия-MIT-yellow?style=for-the-badge" alt="License MIT">
+  <img src="https://img.shields.io/badge/статус-стабильная-brightgreen?style=for-the-badge" alt="Status Stable">
+  
+  <p><strong>Отправка спама в один клик! 🚀</strong></p>
+  <p>Модуль VBA для Microsoft Outlook, который добавляет кнопку "Отправить как спам" для быстрой жалобы на подозрительные письма.</p>
+</div>
 
-## How to install
+---
 
-### Step 1: Enable developer mode
-Open Outlook and navigate to **File > Options**.  
-Under **Customize Ribbon**, in the **Main Tabs** list, check the **Developer** box if it is not already checked.
+## ✨ Возможности
 
-![Outlook Options](https://github.com/T0nyMacaroni/OutlookSpamButton/blob/main/images/1-outlookoptions.png?raw=true) 
+| Функция | Описание |
+|---------|----------|
+| 📨 Отправка в один клик | Выделите письмо и нажмите кнопку — всё готово! |
+| 💬 Добавление комментария | Объясните, почему вы считаете письмо подозрительным |
+| 📅 Автоматическая дата | Время отправки автоматически добавляется в тело письма |
+| 🗂️ Выбор действия | Удалить, переместить в "Отправленные" или в "Архив" |
+| 🔒 Открытый код | Код прозрачен — вы можете просмотреть его перед использованием |
+| 🌍 Русский язык | Все диалоговые окна на русском языке |
 
-### Step 2: Import module
-In the outlook ribbon select the new **Developer** tab and click on **Visual Basic** (or press Alt + F11)  
-In the Visual Basic window click on **File > Import File** and import the module from this repository.  
+---
 
-![Import Module](https://github.com/T0nyMacaroni/OutlookSpamButton/blob/main/images/2-importmodule.png?raw=true)  
+## 🖼️ Как это выглядит
 
-### Step 2b: Change email address (optional)
-Change the email address in the code that you would like to send your spam to.  
-By default, this mail will be sent to verdacht@safeonweb.be. Feel free to change this.
+<div align="center">
+  <table>
+    <tr>
+      <td><img src="images/preview1.png" alt="Окно ввода комментария" width="300"/></td>
+      <td><img src="images/preview2.png" alt="Выбор действия" width="300"/></td>
+    </tr>
+    <tr>
+      <td align="center"><em>📝 Ввод комментария</em></td>
+      <td align="center"><em>🗂️ Выбор действия</em></td>
+    </tr>
+  </table>
+</div>
 
-### Step 3: Add button in ribbon
-Pick the tab where you want to add your own group. 
+---
 
-Select **New Group**.  
-That adds **New Group (Custom)** to the tab you picked.
+## 📋 Как это работает
 
-To use a better name for your new group, click **Rename**, type the name you want in the **Display name** box, and then click **OK**.  
+1. 📧 Выделите письмо в папке "Входящие"
+2. 🔘 Нажмите кнопку "Отправить как спам"
+3. 💬 Введите комментарий
+4. 🗂️ Выберите действие для исходного письма:
+   - **Да** → удалить
+   - **Нет** → переместить в "Отправленные"
+   - **Отмена** → переместить в "Архив"
+5. ✅ Готово!
 
-To add a macro to the group, in the **Choose commands from** list, click **Macros**.
+### 📧 Пример отправленного письма
 
-Select the macro you imported to add to your new group, and then click **Add**. The macro is added to your **Custom group**.
+> **Тема:** REPORT SPAM: Важный счет от банка
+>
+> **Тело письма:**
+>
+> ```
+> Жалоба на подозрительное письмо.
+>
+> Дата и время отправки: 28.07.2026 14:35:22
+>
+> Комментарий отправителя:
+> ---
+> Это письмо пришло с незнакомого адреса и просит перейти по ссылке
+> ---
+>
+> Исходное письмо прикреплено к этому сообщению как вложение.
+> ```
 
-![Import Module](https://github.com/T0nyMacaroni/OutlookSpamButton/blob/main/images/3-customizeribbon.png?raw=true) 
+---
 
-To use a friendlier name, click **Rename**, and then type the name you want in the **Display name** box and choose an icon. (optional)
+## 🚀 Установка
 
-![Rename](https://github.com/T0nyMacaroni/OutlookSpamButton/blob/main/images/4-rename.png?raw=true) 
+### Шаг 1: Включите вкладку "Разработчик"
 
-Click **OK** to save.
+1. Откройте Outlook
+2. Перейдите в **Файл → Параметры → Настроить ленту**
+3. В правой части, в разделе **Основные вкладки**, поставьте галочку ✅ **Разработчик**
+4. Нажмите **OK**
 
-The new group appears on the tab you picked, where you can click the button to run the macro. 
+### Шаг 2: Импортируйте модуль
 
-![Final Result](https://github.com/T0nyMacaroni/OutlookSpamButton/blob/main/images/5-final.png?raw=true) 
+**Вариант А — импорт файла:**
 
-Enjoy!
+1. На вкладке **Разработчик** нажмите **Visual Basic** (или нажмите `Alt+F11`)
+2. В открывшемся редакторе VBA перейдите в **Файл → Импортировать файл...**
+3. Выберите файл `OutlookSpamButton.bas` из этого репозитория
+4. Модуль появится в папке **Модули** в левой панели
+
+**Вариант Б — создание вручную:**
+
+1. В редакторе VBA: **Insert → Module**
+2. Скопируйте весь код из `OutlookSpamButton.bas` в новый модуль
+3. Сохраните: **Файл → Сохранить VbaProject.OTM**
+
+### Шаг 3: Настройка адреса получателя (опционально)
+
+По умолчанию письма отправляются на адрес **`verdacht@safeonweb.be`** (бельгийский центр кибербезопасности).
+
+Чтобы изменить адрес, откройте модуль и найдите строку:
+
+```vba
+Public Const SPAM_REPORT_EMAIL As String = "verdacht@safeonweb.be"
+```
+
+Замените email на нужный вам.
+
+### Шаг 4: Добавьте кнопку на ленту
+
+1. В Outlook перейдите в **Файл → Параметры → Настроить ленту**
+2. Выберите вкладку, куда хотите добавить кнопку (например, "Главная")
+3. Нажмите **Создать группу** → переименуйте её (например, "Спам")
+4. В левом списке **Выбрать команды из** выберите **Макросы**
+5. Выберите макрос `ForwardAndDeleteSpam` и нажмите **Добавить →**
+6. Чтобы изменить название и иконку кнопки, нажмите **Переименовать...**
+7. Нажмите **OK** для сохранения
+
+### Шаг 5: Разрешите выполнение макросов
+
+⚠️ **Важно:** Outlook по умолчанию блокирует макросы. Вам нужно разрешить их выполнение.
+
+1. В Outlook: **Файл → Параметры → Центр управления безопасностью**
+2. Нажмите **Параметры центра управления безопасностью...**
+3. Выберите **Настройки макросов**
+4. Выберите один из вариантов:
+   - ✅ **Включить все макросы** (для теста)
+   - ✅ **Включить макросы с уведомлением** (рекомендуется)
+5. Убедитесь, что включено: ✅ **Доверять доступу к объектной модели VBA**
+6. Нажмите **OK → OK**
+7. Перезапустите Outlook
+
+---
+
+## 🎯 Использование
+
+1. 📧 Выделите письмо в папке "Входящие"
+2. 🔘 Нажмите кнопку "Отправить как спам" (или запустите макрос через вкладку **Разработчик → Макросы**)
+3. 💬 Введите комментарий в появившемся окне
+4. 🗂️ Выберите действие для исходного письма:
+   - **Да** → удалить
+   - **Нет** → переместить в "Отправленные"
+   - **Отмена** → переместить в "Архив"
+5. ✅ Готово! Письмо отправлено, а исходное обработано согласно вашему выбору
+
+---
+
+## 🔧 Устранение неполадок
+
+| Проблема | Решение |
+|----------|---------|
+| ❌ **"The macros in this project are disabled"** | Включите макросы в Центре управления безопасностью. Или разблокируйте файл `VbaProject.OTM` в папке `%AppData%\Microsoft\Outlook\` |
+| ❌ **"Compile error: Syntax error"** | Удалите строку `Attribute VB_Name = ...` из начала модуля — VBA добавляет её автоматически. Убедитесь, что все строки правильно заключены в кавычки |
+| ❌ **Кнопка не появляется на ленте** | Проверьте, что вы добавили макрос в **Макросы**, а не просто вставили код. Перезапустите Outlook |
+| ❌ **Письма не отправляются** | Убедитесь, что у вас настроена учетная запись Outlook. Проверьте, что в настройках разрешена отправка через VBA |
+
+---
+
+## 📁 Структура проекта
+
+```
+OutlookSpamButton/
+├── OutlookSpamButton.bas          # Основной VBA-модуль
+├── README.md                      # Этот файл
+├── LICENSE                        # Лицензия MIT
+└── images/                        # Скриншоты (опционально)
+```
+
+---
+
+## 📄 Лицензия
+
+Проект распространяется под лицензией MIT. Подробности в файле `LICENSE`.
+
+---
+
+## 🤝 Вклад в проект
+
+Буду рад любым улучшениям! Создавайте Issue или Pull Request, если хотите предложить изменения.
+
+---
+
+## 📞 Контакты
+
+Если у вас есть вопросы или предложения, создайте Issue в этом репозитории.
+
+---
+
+<div align="center">
+  <sub>Built with ❤️ for a spam-free inbox</sub>
+</div>
